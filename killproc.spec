@@ -1,7 +1,7 @@
 Summary:	killproc and assorted tools for boot scripts
 Name:		killproc
 Version:	2.12
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.bz2
@@ -33,20 +33,21 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# in rc-scripts
+rm -f $RPM_BUILD_ROOT{%{_bindir}/usleep,%{_mandir}/man1/usleep.1}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/fsync
-%attr(755,root,root) %{_bindir}/usleep
 %attr(755,root,root) %{_sbindir}/checkproc
 %attr(755,root,root) %{_sbindir}/pidofproc
 %attr(755,root,root) %{_sbindir}/start_daemon
 %attr(755,root,root) %{_sbindir}/killproc
 %attr(755,root,root) %{_sbindir}/startproc
 %{_mandir}/man1/fsync.1*
-%{_mandir}/man1/usleep.1*
 %{_mandir}/man8/checkproc.8*
 %{_mandir}/man8/killproc.8*
 %{_mandir}/man8/start_daemon.8
