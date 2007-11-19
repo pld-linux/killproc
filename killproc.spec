@@ -1,7 +1,7 @@
 Summary:	killproc and assorted tools for boot scripts
 Name:		killproc
 Version:	2.12
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.bz2
