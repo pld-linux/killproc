@@ -1,4 +1,5 @@
 Summary:	killproc and assorted tools for boot scripts
+Summary(pl.UTF-8):	killproc i zbliżone narzędzia do skryptów startowych
 Name:		killproc
 Version:	2.12
 Release:	3
@@ -14,10 +15,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_exec_prefix	/
 
 %description
-Some useful programs for a replacment of the shell functions daemon
+Some useful programs for a replacement of the shell functions daemon
 and killproc found in the Linux System V init suite. killproc(8) for
 signaling or terminating, checkproc(8) for checking and startproc(8)
 for starting processes. Each program has its own manual page.
+
+%description -l pl.UTF-8
+Kilka przydatnych programów zastępujących funkcje powłoki daemon i
+killproc z zestawu skryptów startowych System V dla Linuksa.
+killproc(8) służy do wysyłania sygnałów i kończenia procesów,
+checkproc(8) do sprawdzania procesów, a startproc(8) do uruchamiania
+procesów. Każdy program ma własną stronę manuala.
 
 %prep
 %setup -q
@@ -30,6 +38,7 @@ for starting processes. Each program has its own manual page.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
